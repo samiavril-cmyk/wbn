@@ -79,13 +79,8 @@ export function Hero() {
     offset: ["start start", "end end"]
   });
 
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 70,
-    damping: 20,
-    restDelta: 0.001
-  });
-
-  const frameIndex = useTransform(smoothProgress, [0, 1], [0, Math.max(0, frameUrls.length - 1)]);
+  // Remove useSpring to avoid input lag on touch devices; native scrolling is smooth enough.
+  const frameIndex = useTransform(scrollYProgress, [0, 1], [0, Math.max(0, frameUrls.length - 1)]);
 
   const [images, setImages] = useState<HTMLImageElement[]>([]);
   const [loadedCount, setLoadedCount] = useState(0);
@@ -141,8 +136,6 @@ export function Hero() {
     const x = (cw - w) / 2;
     const y = (ch - h) / 2;
 
-    ctx.fillStyle = '#050505';
-    ctx.fillRect(0, 0, cw, ch);
     ctx.drawImage(img, x, y, w, h);
   };
 
