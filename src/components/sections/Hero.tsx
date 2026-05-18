@@ -147,10 +147,10 @@ export function Hero() {
   };
 
   useEffect(() => {
-    if (images.length > 0 && images[0]?.complete) {
-      drawFrame(0);
+    if (loadedCount > 0) {
+      drawFrame(Math.floor(frameIndex.get()));
     }
-  }, [images]);
+  }, [images, loadedCount]);
 
   useMotionValueEvent(frameIndex, 'change', (latest) => {
     drawFrame(Math.floor(latest));
