@@ -26,7 +26,7 @@ function OverlayText({ progress }: { progress: any }) {
           </span>
           Einzigartiges Weiterbildungsnetzwerk der Schweiz
         </div>
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-medium leading-[1.1] mb-6 drop-shadow-sm max-w-4xl text-white">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-medium leading-[1.1] mb-6 drop-shadow-sm max-w-4xl text-white">
           Weiterbildungsnetzwerk <br className="hidden md:block" />
           <span className="italic opacity-90 font-light">Chirurgie</span>
         </h1>
@@ -38,17 +38,17 @@ function OverlayText({ progress }: { progress: any }) {
 
       {/* Beat 2 */}
       <motion.div style={{ opacity: op2, y: y2 }} className="absolute flex flex-col items-center">
-        <h2 className="text-5xl md:text-7xl font-display font-medium mb-6 text-white max-w-4xl tracking-tight">
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-medium mb-6 text-white max-w-4xl tracking-tight">
           Praxisnah & Exzellent
         </h2>
-        <p className="text-xl md:text-2xl opacity-80 max-w-2xl font-light">
+        <p className="text-lg md:text-2xl opacity-80 max-w-2xl font-light">
           Robotik- und Nahtkurse direkt am Spital.<br />Strukturierte Weiterbildung nach modernsten Standards.
         </p>
       </motion.div>
 
       {/* Beat 3 */}
       <motion.div style={{ opacity: op3, y: y3 }} className="absolute flex flex-col items-center">
-        <h2 className="text-5xl md:text-7xl font-display font-medium mb-10 text-white tracking-tight">
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-medium mb-10 text-white tracking-tight">
           Bereit für den nächsten Schritt?
         </h2>
         <div className="pointer-events-auto flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
