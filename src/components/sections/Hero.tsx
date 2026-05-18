@@ -113,13 +113,21 @@ export function Hero() {
   }, []);
 
   const drawFrame = (index: number) => {
-    if (!canvasRef.current || images.length === 0 || !images[index] || !images[index].complete) return;
+    if (!canvasRef.current || images.length === 0) return;
     
+    // Find closest loaded frame if current isn't loaded
+    let renderIndex = index;
+    while (renderIndex >= 0 && (!images[renderIndex] || !images[renderIndex].complete)) {
+      renderIndex--;
+    }
+    
+    if (renderIndex < 0) return;
+
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const img = images[index];
+    const img = images[renderIndex];
     
     const cw = canvas.width;
     const ch = canvas.height;
@@ -162,7 +170,7 @@ export function Hero() {
     return () => window.removeEventListener('resize', handleResize);
   }, [images]);
 
-  const isLoaded = loadedCount >= frameUrls.length || frameUrls.length === 0;
+  const isLoaded = loadedCount >= Math.min(1, frameUrls.length) || frameUrls.length === 0;
 
   return (
     <>
