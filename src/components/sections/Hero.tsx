@@ -119,7 +119,7 @@ export function Hero() {
     if (renderIndex < 0) return;
 
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: false });
     if (!ctx) return;
 
     const img = images[renderIndex];
@@ -145,8 +145,14 @@ export function Hero() {
     }
   }, [images, loadedCount]);
 
+  const lastDrawn = useRef(-1);
+
   useMotionValueEvent(frameIndex, 'change', (latest) => {
-    drawFrame(Math.floor(latest));
+    const nextFrame = Math.floor(latest);
+    if (nextFrame !== lastDrawn.current) {
+      lastDrawn.current = nextFrame;
+      drawFrame(nextFrame);
+    }
   });
 
   useEffect(() => {
