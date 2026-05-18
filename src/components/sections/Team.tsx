@@ -83,7 +83,7 @@ export function Team() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="bg-slate-50 p-6 rounded-3xl border border-slate-100 flex flex-col justify-start hover:shadow-md hover:border-slate-200 transition-all duration-300"
+              className="bg-slate-50 p-6 rounded-3xl border border-slate-100 flex flex-col justify-start hover:shadow-md hover:border-slate-200 transition-colors transition-shadow duration-300"
             >
               <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-slate-400 flex-shrink-0 shadow-sm border border-slate-100 mb-4">
                 <UserCircle2 size={24} />

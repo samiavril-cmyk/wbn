@@ -54,7 +54,7 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col gap-4 hover:shadow-md hover:border-slate-200 transition-all duration-300"
+              className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col gap-4 hover:shadow-md hover:border-slate-200 transition-colors transition-shadow duration-300"
             >
               <div className="w-12 h-12 bg-brand-50 rounded-2xl flex items-center justify-center">
                 {feature.icon}

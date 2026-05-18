@@ -98,7 +98,7 @@ export function Courses() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:shadow-lg hover:border-slate-200 transition-all duration-300 flex flex-col h-full"
+              className="group relative bg-slate-50 rounded-3xl p-8 border border-slate-100 hover:shadow-lg hover:border-slate-200 transition-colors transition-shadow duration-300 flex flex-col h-full"
             >
               <div className="flex justify-between items-start mb-6">
                 <span className={`px-3 py-1 text-xs font-medium rounded-full border ${getTypeColor(event.type)}`}>
